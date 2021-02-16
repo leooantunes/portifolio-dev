@@ -6,10 +6,13 @@ import {
   RedesContainer,
 } from "./style";
 import {SidebarMenu, SidebarRedes} from '../Sidebar/sidebarData'; 
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Logo from '../../content/images/svg/la.svg';
 
 function Sidebar() {
+
+  console.log(window.location.pathname)
+
   return (
     <ContainerSidebar>
       <LogoContainer>
@@ -19,7 +22,7 @@ function Sidebar() {
         <ul>
           {SidebarMenu.map((item,key) => {
             return(
-              <Link key={key} to={item.link} onClick={() => window.location.pathname = item.link} id={window.location.pathname === item.link ? 'active' : ''}>{item.icon}</Link>
+              <NavLink key={key} to={item.link} activeClassName="active">{item.icon} <br/> {item.title}</NavLink>
             )
           })}
         </ul>

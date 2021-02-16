@@ -15,11 +15,15 @@ export const ContainerSidebar = styled.div`
     right: 0;
     z-index: 111111111;
 
-    #active{
-        padding: 0.5rem;
-        border-radius: 25px;
-        color: #23235b;
-        background-color: #FF2350;
+    a{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    .active{
+        color:white;
     }
 `
 
